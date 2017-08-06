@@ -109,7 +109,7 @@ public class GameEngine {
 		int		j = 0;
 		boolean	moved = false;
 		
-		for (int i = 0; i < 16; i++) {
+		for (int i = 15; i >= 0; i--) {
 			
 			if (values[i] != 0)
 			{
@@ -128,7 +128,7 @@ public class GameEngine {
 					
 					}
 				
-					else if (j == 4 - (i % 4) - 1 && values[i + j] == 0)
+					else if (j == 1 && values[i + j] == 0)
 					{
 					
 						this.setValue(values[i], i + j);
@@ -144,7 +144,7 @@ public class GameEngine {
 						if (j != 4 - (i % 4) - 1)
 						{
 							
-							this.setValue(values[i], i + j - 1);
+							this.setValue(values[i], i + j + 1);
 							this.setValue(0, i);
 							moved = true;
 							
@@ -154,7 +154,7 @@ public class GameEngine {
 					
 					}
 				
-					j += 1;
+					j -= 1;
 				
 				}
 			
